@@ -37,49 +37,171 @@ window.addEventListener("scroll", () => {
 
 
 // Contact form handling
-document.getElementById("contact-form").addEventListener("submit", function (e) {
-  e.preventDefault()
+var contactForm = document.getElementById("contact-form");
+if (contactForm) {
+  contactForm.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-  const formData = new FormData(this)
-  const messageDiv = document.getElementById("form-message")
+    const formData = new FormData(this);
+    const messageDiv = document.getElementById("form-message");
 
-  // Simulate form submission (replace with actual form handling)
-  messageDiv.className = "mt-4 text-center text-blue-600"
-  messageDiv.textContent = "Thank you for your message! I'll get back to you soon."
-  messageDiv.classList.remove("hidden")
+    // Simulate form submission (replace with actual form handling)
+    messageDiv.className = "mt-4 text-center text-blue-600";
+    messageDiv.textContent = "Thank you for your message! I'll get back to you soon.";
+    messageDiv.classList.remove("hidden");
 
-  // Reset form
-  this.reset()
+    // Reset form
+    this.reset();
 
-  // Hide message after 5 seconds
-  setTimeout(() => {
-    messageDiv.classList.add("hidden")
-  }, 5000)
-})
-
-// Intersection Observer for animations
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: "0px 0px -50px 0px",
+    // Hide message after 5 seconds
+    setTimeout(() => {
+      messageDiv.classList.add("hidden");
+    }, 5000);
+  });
 }
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("animated")
-    }
-  })
-}, observerOptions)
+// Intersection Observer and ECharts initialization
 
-// Observe all elements with animation classes
 document.addEventListener("DOMContentLoaded", () => {
-  const animatedElements = document.querySelectorAll(".fade-in-up, .fade-in-left, .fade-in-right")
-  animatedElements.forEach((el) => {
-    el.classList.add("animate-on-scroll")
-    observer.observe(el)
-  })
-})
+  // Intersection Observer for animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px",
+  };
 
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("animated");
+      }
+    });
+  }, observerOptions);
+
+  // Observe all elements with animation classes
+  const animatedElements = document.querySelectorAll(
+    ".fade-in-up, .fade-in-left, .fade-in-right"
+  );
+  animatedElements.forEach((el) => {
+    el.classList.add("animate-on-scroll");
+    observer.observe(el);
+  });
+
+  // ECharts: Languages Bar Chart
+  const languagesChartEl = document.getElementById("languages");
+  if (languagesChartEl && window.echarts) {
+    const languagesChart = echarts.init(languagesChartEl);
+    const languagesOption = {
+      title: {
+        text: "Languages Spoken",
+        left: "center",
+        top: 10,
+      },
+      tooltip: {},
+      xAxis: {
+        type: "category",
+        data: ["Kurdish", "English", "Arabic", "Italian", "German"],
+        axisLabel: { rotate: 20 },
+      },
+      yAxis: {
+        type: "value",
+        min: 0,
+        max: 5,
+        interval: 1,
+        name: "Proficiency",
+        nameLocation: "middle",
+        nameGap: 40,
+      },
+      series: [
+        {
+          data: [5, 4, 3, 2, 2], // 5=Native, 4=Advanced, 3=Intermediate, 2=Basic
+          type: "bar",
+          itemStyle: {
+            color: "#2563eb",
+          },
+          label: {
+            show: true,
+            position: "top",
+            formatter: function (params) {
+              return params.value === 5
+                ? "Native"
+                : params.value === 4
+                ? "Advanced"
+                : params.value === 3
+                ? "Intermediate"
+                : "Basic";
+            },
+          },
+        },
+      ],
+    };
+    languagesChart.setOption(languagesOption);
+    window.addEventListener("resize", () => languagesChart.resize());
+  }
+
+  // ECharts: Education Gantt Chart
+  const ganttEl = document.getElementById("gantt");
+  if (ganttEl && window.echarts) {
+    const ganttChart = echarts.init(ganttEl);
+    const ganttOption = {
+      title: {
+        text: "Education Timeline",
+        left: "center",
+        top: 10,
+      },
+      tooltip: {
+        formatter: function (params) {
+          return params.name + ": " + params.value[0] + " - " + params.value[1];
+        },
+      },
+      grid: {
+        left: "10%",
+        right: "10%",
+        top: 60,
+        bottom: 40,
+      },
+      xAxis: {
+        type: "time",
+        min: "2017-09-01",
+        max: "2024-09-01",
+        axisLabel: {
+          formatter: function (value) {
+            const date = new Date(value);
+            return date.getFullYear();
+          },
+        },
+      },
+      yAxis: {
+        type: "category",
+        data: [
+          "American University of Iraq",
+          "Ca' Foscari University, Venice",
+        ],
+      },
+      series: [
+        {
+          type: "bar",
+          stack: "total",
+          barWidth: 20,
+          data: [
+            {
+              name: "American University of Iraq",
+              value: ["2017-09-01", "2022-06-01"],
+            },
+            {
+              name: "Ca' Foscari University, Venice",
+              value: ["2021-09-01", "2022-02-01"],
+            },
+          ],
+          itemStyle: {
+            color: "#10b981",
+          },
+        },
+      ],
+    };
+    ganttChart.setOption(ganttOption);
+    window.addEventListener("resize", () => ganttChart.resize());
+  }
+});
 
 
 // Add scroll-to-top button
@@ -112,6 +234,5 @@ scrollToTopBtn.addEventListener("click", () => {
 // Add loading animation
 window.addEventListener("load", () => {
   document.body.classList.add("loaded")
-})
-
+})})
 
