@@ -35,13 +35,6 @@ window.addEventListener("scroll", () => {
     }
   })
 
-  navLinks.forEach((link) => {
-    link.classList.remove("active")
-    if (link.getAttribute("href") === "#" + current) {
-      link.classList.add("active")
-    }
-  })
-})
 
 // Contact form handling
 document.getElementById("contact-form").addEventListener("submit", function (e) {
@@ -87,21 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 })
 
-// Typing effect for hero section (optional enhancement)
-function typeWriter(element, text, speed = 100) {
-  let i = 0
-  element.innerHTML = ""
 
-  function type() {
-    if (i < text.length) {
-      element.innerHTML += text.charAt(i)
-      i++
-      setTimeout(type, speed)
-    }
-  }
-
-  type()
-}
 
 // Add scroll-to-top button
 const scrollToTopBtn = document.createElement("button")
@@ -135,11 +114,4 @@ window.addEventListener("load", () => {
   document.body.classList.add("loaded")
 })
 
-// Parallax effect for hero section (subtle)
-window.addEventListener("scroll", () => {
-  const scrolled = window.pageYOffset
-  const hero = document.getElementById("home")
-  if (hero) {
-    hero.style.transform = `translateY(${scrolled * 0.5}px)`
-  }
-})
+
