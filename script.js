@@ -34,7 +34,7 @@ window.addEventListener("scroll", () => {
       current = section.getAttribute("id")
     }
   })
-
+});
 
 // Contact form handling
 var contactForm = document.getElementById("contact-form");
@@ -59,7 +59,74 @@ if (contactForm) {
     }, 5000);
   });
 }
+const ganttChart = echarts.init(document.getElementById('gantt'));
+    const ganttOption = {
 
+      tooltip: {
+        formatter: params => {
+          return `${params.name}<br/>${params.value[1]} to ${params.value[2]}`;
+        }
+      },
+      xAxis: {
+        type: 'time',
+        min: '2019-09-01',
+        max: '2025-04-01',
+        axisLabel: {
+          formatter: value => echarts.format.formatTime('yyyy-MM', value)
+        }
+      },
+      yAxis: {
+        type: 'category',
+        data: [
+          'Technopreneurship - India',
+          'Ca’ Foscari - Exchange',
+          'AUIS - Software Engineering'
+        ]
+      },
+      series: [
+        {
+          type: 'custom',
+          renderItem: (params, api) => {
+            const categoryIndex = api.value(0);
+            const start = api.coord([api.value(1), categoryIndex]);
+            const end = api.coord([api.value(2), categoryIndex]);
+            const height = api.size([0, 1])[1] * 0.6;
+
+            return {
+              type: 'rect',
+              shape: echarts.graphic.clipRectByRect(
+                {
+                  x: start[0],
+                  y: start[1] - height / 2,
+                  width: end[0] - start[0],
+                  height: height
+                },
+                {
+                  x: params.coordSys.x,
+                  y: params.coordSys.y,
+                  width: params.coordSys.width,
+                  height: params.coordSys.height
+                }
+              ),
+              style: api.style()
+            };
+          },
+          itemStyle: {
+            color: '#5470C6'
+          },
+          encode: {
+            x: [1, 2],
+            y: 0
+          },
+          data: [
+            [0, '2025-02-01', '2025-03-01'], // Technopreneurship - India
+            [1, '2023-02-01', '2023-06-01'], // Exchange - Ca' Foscari
+            [2, '2020-09-01', '2024-06-01']  // AUIS
+          ]
+        }
+      ]
+    };
+    ganttChart.setOption(ganttOption);
 // Intersection Observer and ECharts initialization
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -91,11 +158,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (languagesChartEl && window.echarts) {
     const languagesChart = echarts.init(languagesChartEl);
     const languagesOption = {
-      title: {
-        text: "Languages Spoken",
-        left: "center",
-        top: 10,
-      },
+
       tooltip: {},
       xAxis: {
         type: "category",
@@ -137,102 +200,83 @@ document.addEventListener("DOMContentLoaded", () => {
     languagesChart.setOption(languagesOption);
     window.addEventListener("resize", () => languagesChart.resize());
   }
+  // Work Experience Timeline Chart
+  const workTimelineEl = document.getElementById('work-timeline');
+  if (workTimelineEl && window.echarts) {
+    const workChart = echarts.init(workTimelineEl);
+    const workOption = {
 
-  // ECharts: Education Gantt Chart
-  const ganttEl = document.getElementById("gantt");
-  if (ganttEl && window.echarts) {
-    const ganttChart = echarts.init(ganttEl);
-    const ganttOption = {
-      title: {
-        text: "Education Timeline",
-        left: "center",
-        top: 10,
-      },
       tooltip: {
-        formatter: function (params) {
-          return params.name + ": " + params.value[0] + " - " + params.value[1];
-        },
-      },
-      grid: {
-        left: "10%",
-        right: "10%",
-        top: 60,
-        bottom: 40,
+        formatter: params => {
+          return `${params.name}<br/>${params.value[1]} to ${params.value[2]}`;
+        }
       },
       xAxis: {
-        type: "time",
-        min: "2017-09-01",
-        max: "2024-09-01",
+        type: 'time',
+        min: '2023-10-01',
+        max: '2025-07-01',
         axisLabel: {
-          formatter: function (value) {
-            const date = new Date(value);
-            return date.getFullYear();
-          },
-        },
+          formatter: value => echarts.format.formatTime('yyyy', value)
+        }
       },
       yAxis: {
-        type: "category",
+        type: 'category',
         data: [
-          "American University of Iraq",
-          "Ca' Foscari University, Venice",
-        ],
+          'Data Analyst / Software Developer',
+          'Full-Stack Developer',
+          'Web Developer'
+        ]
       },
       series: [
         {
-          type: "bar",
-          stack: "total",
-          barWidth: 20,
-          data: [
-            {
-              name: "American University of Iraq",
-              value: ["2017-09-01", "2022-06-01"],
-            },
-            {
-              name: "Ca' Foscari University, Venice",
-              value: ["2021-09-01", "2022-02-01"],
-            },
-          ],
-          itemStyle: {
-            color: "#10b981",
+          type: 'custom',
+          renderItem: (params, api) => {
+            const categoryIndex = api.value(0);
+            const start = api.coord([api.value(1), categoryIndex]);
+            const end = api.coord([api.value(2), categoryIndex]);
+            const height = api.size([0, 1])[1] * 0.6;
+
+            return {
+              type: 'rect',
+              shape: echarts.graphic.clipRectByRect(
+                {
+                  x: start[0],
+                  y: start[1] - height / 2,
+                  width: end[0] - start[0],
+                  height: height
+                },
+                {
+                  x: params.coordSys.x,
+                  y: params.coordSys.y,
+                  width: params.coordSys.width,
+                  height: params.coordSys.height
+                }
+              ),
+              style: api.style()
+            };
           },
-        },
-      ],
+          itemStyle: {
+            color: '#f59e42'
+          },
+          encode: {
+            x: [1, 2],
+            y: 0
+          },
+          data: [
+            [0, '2024-08-01', '2025-04-01'], // Data Analyst / Software Developer
+            [1, '2024-06-01', '2024-09-01'], // Full-Stack Developer
+            [2, '2023-11-01', '2024-02-01']  // Web Developer
+          ]
+        }
+      ]
     };
-    ganttChart.setOption(ganttOption);
-    window.addEventListener("resize", () => ganttChart.resize());
+    workChart.setOption(workOption);
   }
 });
 
 
-// Add scroll-to-top button
-const scrollToTopBtn = document.createElement("button")
-scrollToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>'
-scrollToTopBtn.className =
-  "fixed bottom-8 right-8 w-12 h-12 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 z-50 opacity-0 pointer-events-none"
-scrollToTopBtn.id = "scroll-to-top"
-document.body.appendChild(scrollToTopBtn)
-
-// Show/hide scroll-to-top button
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 300) {
-    scrollToTopBtn.style.opacity = "1"
-    scrollToTopBtn.style.pointerEvents = "auto"
-  } else {
-    scrollToTopBtn.style.opacity = "0"
-    scrollToTopBtn.style.pointerEvents = "none"
-  }
-})
-
-// Scroll to top functionality
-scrollToTopBtn.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  })
-})
-
 // Add loading animation
 window.addEventListener("load", () => {
   document.body.classList.add("loaded")
-})})
+})
 
