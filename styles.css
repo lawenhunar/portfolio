@@ -8,9 +8,14 @@
 body {
   font-family: "Inter", sans-serif;
   line-height: 1.6;
-  color: #334155;
+  background-color: #292d33;
 }
-
+.text-slate-600{
+  color: #e6f0ff;
+}
+.text-slate-900{
+  color: #d2e4ff;
+}
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
@@ -100,12 +105,13 @@ html {
 
 /* Custom components */
 .card {
-  background: white;
+  background: rgb(91, 79, 138);
   border-radius: 12px;
   padding: 24px;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   transition: all 0.3s ease;
   height: 100%;
+  color: white;
 }
 
 .card:hover {
@@ -244,10 +250,7 @@ html {
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
-.nav-link.active {
-  color: #2563eb;
-  font-weight: 600;
-}
+
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
