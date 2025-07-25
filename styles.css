@@ -10,11 +10,19 @@ body {
   line-height: 1.6;
   background-color: #292d33;
 }
-.text-slate-600{
+
+
+.text-color-600{
   color: #e6f0ff;
 }
-.text-slate-900{
-  color: #d2e4ff;
+
+.text-color-900{
+  color: #d3e4ff;
+}
+
+.text-color-500{
+  color: #d4dbe6;
+
 }
 /* Smooth scrolling */
 html {
