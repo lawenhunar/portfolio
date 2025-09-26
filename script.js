@@ -214,7 +214,7 @@ document.addEventListener("DOMContentLoaded", () => {
       xAxis: {
         type: 'time',
         min: '2023-10-01',
-        max: '2025-07-01',
+        max: '2026-12-01',
         axisLabel: {
           formatter: value => echarts.format.formatTime('yyyy', value)
         }
@@ -222,7 +222,8 @@ document.addEventListener("DOMContentLoaded", () => {
       yAxis: {
         type: 'category',
         data: [
-          'Data Analyst / Software Developer',
+          'Mobile Application Developer',
+          'Data Engineer / Full-Stack Developer',
           'Full-Stack Developer',
           'Web Developer'
         ]
@@ -263,9 +264,10 @@ document.addEventListener("DOMContentLoaded", () => {
             y: 0
           },
           data: [
-            [0, '2024-08-01', '2025-04-01'], // Data Analyst / Software Developer
-            [1, '2024-06-01', '2024-09-01'], // Full-Stack Developer
-            [2, '2023-11-01', '2024-02-01']  // Web Developer
+            [0, '2025-08-01', '2026-08-01'], // Mobile Application Developer
+            [1, '2024-08-01', '2025-08-01'], // Data Engineer / Full-Stack Developer
+            [2, '2024-06-01', '2024-09-01'], // Full-Stack Developer
+            [3, '2023-11-01', '2024-02-01']  // Web Developer
           ]
         }
       ]
