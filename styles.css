@@ -6,12 +6,14 @@
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "JetBrains Mono", "Fira Code", "Consolas", "Monaco", "Courier New", monospace;
   line-height: 1.6;
-  background: linear-gradient(135deg, #9a9a9a 0%, #979797 100%);
+  background: linear-gradient(190deg, #515151 0%, #979797 100%);
   background-attachment: fixed;
   min-height: 100vh;
   position: relative;
+  font-feature-settings: "liga" 1, "calt" 1;
+  letter-spacing: 0.02em;
 }
 
 body::before {
@@ -414,6 +416,52 @@ html {
   box-shadow: 
     0 8px 32px rgba(0, 0, 0, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Programming-inspired styling */
+.code-style {
+  font-family: "JetBrains Mono", "Fira Code", "Consolas", "Monaco", "Courier New", monospace;
+  font-feature-settings: "liga" 1, "calt" 1;
+  letter-spacing: 0.02em;
+}
+
+/* Terminal-like styling for headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "JetBrains Mono", "Fira Code", "Consolas", "Monaco", "Courier New", monospace;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+/* Code-like button styling */
+.btn-code {
+  background: linear-gradient(135deg, rgba(0, 255, 127, 0.2), rgba(0, 255, 127, 0.1));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #00ff7f;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 255, 127, 0.3);
+  cursor: pointer;
+  box-shadow: 
+    0 4px 15px rgba(0, 255, 127, 0.1),
+    inset 0 1px 0 rgba(0, 255, 127, 0.2);
+  font-family: "JetBrains Mono", "Fira Code", "Consolas", "Monaco", "Courier New", monospace;
+  letter-spacing: 0.02em;
+}
+
+.btn-code:hover {
+  background: linear-gradient(135deg, rgba(0, 255, 127, 0.3), rgba(0, 255, 127, 0.2));
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 25px rgba(0, 255, 127, 0.15),
+    inset 0 1px 0 rgba(0, 255, 127, 0.3);
+  border-color: rgba(0, 255, 127, 0.4);
 }
 
 /* Floating animation for decorative elements */

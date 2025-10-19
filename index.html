@@ -7,6 +7,9 @@
     <meta name="description" content="Software Engineer with international experience in full-stack development, data analysis, and game development.">
     <script src="https://cdn.tailwindcss.com"></script>    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
 
@@ -19,16 +22,16 @@
             <div class="flex justify-between items-center">
                 <div class="text-xl font-bold text-color-600">Lawen Hunar</div>
                 <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="nav-link text-color-600 hover:text-blue-600 transition-colors">Home</a>
-                    <a href="#about" class="nav-link text-color-600 hover:text-blue-600 transition-colors">About</a>
-                    <a href="#education" class="nav-link text-color-600 hover:text-blue-600 transition-colors">Education</a>
-                    <a href="#experience" class="nav-link text-color-600 hover:text-blue-600 transition-colors">Experience</a>
-                    <a href="#projects" class="nav-link text-color-600 hover:text-blue-600 transition-colors">Projects</a>
-                    <a href="#activities" class="nav-link text-color-600 hover:text-blue-600 transition-colors">Activities</a>
-                    <a href="#training" class="nav-link text-color-600 hover:text-blue-600 transition-colors">Training</a>
-                    <a href="#skills" class="nav-link text-color-600 hover:text-blue-600 transition-colors">Skills</a>
-                    <!-- <a href="#dashboard" class="nav-link text-color-600 hover:text-blue-600 transition-colors">Dashboard</a> -->
-                    <a href="#contact" class="nav-link text-color-600 hover:text-blue-600 transition-colors">Contact</a>
+                    <a href="#home" class="nav-link text-color-600 hover:text-white transition-colors">Home</a>
+                    <a href="#about" class="nav-link text-color-600 hover:text-white transition-colors">About</a>
+                    <a href="#education" class="nav-link text-color-600 hover:text-white transition-colors">Education</a>
+                    <a href="#experience" class="nav-link text-color-600 hover:text-white transition-colors">Experience</a>
+                    <a href="#projects" class="nav-link text-color-600 hover:text-white transition-colors">Projects</a>
+                    <a href="#activities" class="nav-link text-color-600 hover:text-white transition-colors">Activities</a>
+                    <a href="#training" class="nav-link text-color-600 hover:text-white transition-colors">Training</a>
+                    <a href="#skills" class="nav-link text-color-600 hover:text-white transition-colors">Skills</a>
+                    <!-- <a href="#dashboard" class="nav-link text-color-600 hover:text-white transition-colors">Dashboard</a> -->
+                    <a href="#contact" class="nav-link text-color-600 hover:text-white transition-colors">Contact</a>
                 </div>
                 <button class="md:hidden" id="mobile-menu-btn">
                     <i class="fas fa-bars text-color-600"></i>
@@ -37,16 +40,16 @@
             <!-- Mobile Menu -->
             <div class="md:hidden hidden" id="mobile-menu">
                 <div class="pt-4 pb-2 space-y-2">
-                    <a href="#home" class="block py-2 text-color-600 hover:text-blue-600 transition-colors">Home</a>
-                    <a href="#about" class="block py-2 text-color-600 hover:text-blue-600 transition-colors">About</a>
-                    <a href="#education" class="block py-2 text-color-600 hover:text-blue-600 transition-colors">Education</a>
-                    <a href="#experience" class="block py-2 text-color-600 hover:text-blue-600 transition-colors">Experience</a>
-                    <a href="#projects" class="block py-2 text-color-600 hover:text-blue-600 transition-colors">Projects</a>
-                    <a href="#activities" class="block py-2 text-color-600 hover:text-blue-600 transition-colors">Activities</a>
-                    <a href="#training" class="block py-2 text-color-600 hover:text-blue-600 transition-colors">Training</a>
-                    <a href="#skills" class="block py-2 text-color-600 hover:text-blue-600 transition-colors">Skills</a>
-                    <a href="#dashboard" class="block py-2 text-color-600 hover:text-blue-600 transition-colors">Dashboard</a>
-                    <a href="#contact" class="block py-2 text-color-600 hover:text-blue-600 transition-colors">Contact</a>
+                    <a href="#home" class="block py-2 text-color-600 hover:text-white transition-colors">Home</a>
+                    <a href="#about" class="block py-2 text-color-600 hover:text-white transition-colors">About</a>
+                    <a href="#education" class="block py-2 text-color-600 hover:text-white transition-colors">Education</a>
+                    <a href="#experience" class="block py-2 text-color-600 hover:text-white transition-colors">Experience</a>
+                    <a href="#projects" class="block py-2 text-color-600 hover:text-white transition-colors">Projects</a>
+                    <a href="#activities" class="block py-2 text-color-600 hover:text-white transition-colors">Activities</a>
+                    <a href="#training" class="block py-2 text-color-600 hover:text-white transition-colors">Training</a>
+                    <a href="#skills" class="block py-2 text-color-600 hover:text-white transition-colors">Skills</a>
+                    <a href="#dashboard" class="block py-2 text-color-600 hover:text-white transition-colors">Dashboard</a>
+                    <a href="#contact" class="block py-2 text-color-600 hover:text-white transition-colors">Contact</a>
                 </div>
             </div>
         </div>
@@ -123,7 +126,7 @@
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="card fade-in-up">
-                    <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                    <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white">
                         <i class="fas fa-graduation-cap text-xl"></i>
                     </div>
                     <h3 class="font-semibold text-color-900 mb-2 text-center">International Education</h3>
@@ -133,7 +136,7 @@
                 </div>
 
                 <div class="card fade-in-up" style="animation-delay: 0.1s">
-                    <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                    <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white">
                         <i class="fas fa-globe text-xl"></i>
                     </div>
                     <h3 class="font-semibold text-color-900 mb-2 text-center">Multilingual</h3>
@@ -143,7 +146,7 @@
                 </div>
 
                 <div class="card fade-in-up" style="animation-delay: 0.2s">
-                    <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                    <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white">
                         <i class="fas fa-code text-xl"></i>
                     </div>
                     <h3 class="font-semibold text-color-900 mb-2 text-center">Full-Stack Expertise</h3>
@@ -153,7 +156,7 @@
                 </div>
 
                 <div class="card fade-in-up" style="animation-delay: 0.3s">
-                    <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                    <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white">
                         <i class="fas fa-users text-xl"></i>
                     </div>
                     <h3 class="font-semibold text-color-900 mb-2 text-center">Remote Collaboration</h3>
@@ -183,7 +186,7 @@
                             <h3 class="text-xl font-semibold text-color-900">Bachelor of Science in Software Engineering</h3>
                             <div class="flex items-center gap-2 text-color-600 mt-1">
                                 <i class="fas fa-university"></i>
-                                <span class="font-medium">American University of Iraq, Sulaimani (AUIS)</span>
+                                <span class="font-medium">American University of Iraq, Slemani (AUIS)</span>
                             </div>
                         </div>
                         <div class="flex flex-col gap-2">
@@ -193,18 +196,18 @@
                             </div>
                             <div class="flex items-center gap-2 text-sm text-color-500">
                                 <i class="fas fa-map-marker-alt"></i>
-                                <span>Sulaimani, Kurdistan Region of Iraq</span>
+                                <span>Slemani</span>
                             </div>
                             <span class="badge">Bachelor's Degree</span>
                         </div>
                     </div>
                     <ul class="space-y-2 mb-4">
                         <li class="text-color-600 flex items-start gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-white/60 mt-2 flex-shrink-0"></span>
                             Comprehensive curriculum covering software engineering principles, algorithms, data structures, and modern development practices.
                         </li>
                         <li class="text-color-600 flex items-start gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-white/60 mt-2 flex-shrink-0"></span>
                             Completed capstone project Dolus, an AI-based mystery solving game using Godot engine and OpenAI integration.
                         </li>
                     </ul>
@@ -234,11 +237,11 @@
                     </div>
                     <ul class="space-y-2 mb-4">
                         <li class="text-color-600 flex items-start gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-white/60 mt-2 flex-shrink-0"></span>
                             Selected as one of the top three students from all applicants at AUIS for the international exchange program, based on CGPA and student activity.
                         </li>
                         <li class="text-color-600 flex items-start gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-white/60 mt-2 flex-shrink-0"></span>
                             Lived and studied in Venice, Italy for 4 months, gaining international academic and cultural experience.
                         </li>
            
@@ -282,7 +285,7 @@
                     </div>
                     <ul class="space-y-2 mb-4">
                         <li class="text-color-600 flex items-start gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-white/60 mt-2 flex-shrink-0"></span>
                             Collaborated remotely with UI/UX designers and backend developers to develop iOS and Android mobile apps using Flutter.
                         </li>
                     </ul>
@@ -316,15 +319,15 @@
                     </div>
                     <ul class="space-y-2 mb-4">
                         <li class="text-color-600 flex items-start gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-white/60 mt-2 flex-shrink-0"></span>
                             Developed websites and internal systems with Node.js (Express.js), and managed cloud infrastructure (AWS, Cloudflare) for hosting, domains, and SSL security.
                         </li>
                         <li class="text-color-600 flex items-start gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-white/60 mt-2 flex-shrink-0"></span>
                             Developed interactive dashboards with charts using Apache ECharts and created map visualizations using shapefiles and GeoJSON files.
                         </li>
                         <li class="text-color-600 flex items-start gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-white/60 mt-2 flex-shrink-0"></span>
                             Cleaned and processed large datasets while maintaining integrity.
                         </li>
                     </ul>
@@ -359,11 +362,11 @@
                     </div>
                     <ul class="space-y-2 mb-4">
                         <li class="text-color-600 flex items-start gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-white/60 mt-2 flex-shrink-0"></span>
                             Developed responsive websites using Express.js, SQLite, and Flutter for an e-commerce application focused on accessible payment methods and global shopping in Iraq.
                         </li>
                         <li class="text-color-600 flex items-start gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-white/60 mt-2 flex-shrink-0"></span>
                             Collaborated remotely with a team to implement website features.
                         </li>
                     </ul>
@@ -398,11 +401,11 @@
                     </div>
                     <ul class="space-y-2 mb-4">
                         <li class="text-color-600 flex items-start gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-white/60 mt-2 flex-shrink-0"></span>
                             Assisted with uploading and managing vehicle parts listings for a website developed using Shopify.
                         </li>
                         <li class="text-color-600 flex items-start gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-white/60 mt-2 flex-shrink-0"></span>
                             Handled basic development tasks including bug fixes and UI improvements.
                         </li>
                     </ul>
@@ -425,15 +428,63 @@
                     A showcase of my technical projects and contributions
                 </p>
             </div>
-
-            <!-- Featured Projects -->
+            <!-- Projects -->
             <div class="mb-16">
-                <h3 class="text-2xl font-semibold text-color-900 mb-8">Featured Projects</h3>
+                <h3 class="text-2xl font-semibold text-color-900 mb-8">Projects</h3>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 5 - MEED Foundation Website -->
+                    <div class="card project-card fade-in-up flex flex-col">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <h4 class="text-lg font-semibold text-color-900">MEED Foundation Website</h4>
+                        </div>
+                        <p class="text-color-600 text-sm leading-relaxed mb-4">
+                            The official website of MEED Foundation. Features news articles, job postings, and interactive charts using Apache ECharts for data visualization.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tech-badge">Node.js</span>
+                            <span class="tech-badge">MongoDB</span>
+                            <span class="tech-badge">Apache ECharts</span>
+                            <span class="tech-badge">TailwindCSS</span>
+                        </div>
+                        <div class="flex gap-2 mt-auto">
+                            <a href="https://www.meedfoundation.org/" target="_blank" class="btn-primary flex-1">
+                                <i class="fas fa-external-link-alt mr-2"></i>
+                                Visit Website
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 6 - UST GYM App -->
+                    <div class="card project-card fade-in-up flex flex-col">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white">
+                                <i class="fas fa-dumbbell"></i>
+                            </div>
+                            <h4 class="text-lg font-semibold text-color-900">UST GYM</h4>
+                        </div>
+                        <p class="text-color-600 text-sm leading-relaxed mb-4">
+                            A comprehensive gym management mobile application for gym members and gyms. Features workout assignment, member management, and training program customization for fitness enthusiasts and gym owners.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tech-badge">Flutter</span>
+                            <span class="tech-badge">Dart</span>
+                            <span class="tech-badge">Mobile App</span>
+                            <span class="tech-badge">Gym Management</span>
+                        </div>
+                        <div class="flex gap-2 mt-auto">
+                            <button onclick="showScreenshots()" class="btn-primary flex-1">
+                                <i class="fas fa-images mr-2"></i>
+                                View Screenshots
+                            </button>
+                        </div>
+                    </div>
                     <!-- Project 1 -->
                     <div class="card project-card fade-in-up flex flex-col">
                         <div class="flex items-center gap-3 mb-3">
-                            <div class="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600">
+                            <div class="w-10 h-10 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white">
                                 <i class="fas fa-gamepad"></i>
                             </div>
                             <h4 class="text-lg font-semibold text-color-900">Dolus</h4>
@@ -461,7 +512,7 @@
                     <!-- Project 2 -->
                     <div class="card project-card fade-in-up flex flex-col">
                         <div class="flex items-center gap-3 mb-3">
-                            <div class="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600">
+                            <div class="w-10 h-10 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white">
                                 <i class="fas fa-code"></i>
                             </div>
                             <h4 class="text-lg font-semibold text-color-900">ASCII/Morse Code Converter</h4>
@@ -486,7 +537,7 @@
                     <!-- Project 3 -->
                     <div class="card project-card fade-in-up flex flex-col">
                         <div class="flex items-center gap-3 mb-3">
-                            <div class="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600">
+                            <div class="w-10 h-10 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white">
                                 <i class="fas fa-globe"></i>
                             </div>
                             <h4 class="text-lg font-semibold text-color-900">Movie Listing Website</h4>
@@ -514,7 +565,7 @@
                     <!-- project 4 -->
                     <div class="card project-card fade-in-up flex flex-col">
                         <div class="flex items-center gap-3 mb-3">
-                            <div class="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600">
+                            <div class="w-10 h-10 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white">
                                 <i class="fas fa-gamepad"></i>
                             </div>
                             <h4 class="text-lg font-semibold text-color-900">Number Hunter</h4>
@@ -534,41 +585,12 @@
                             </a>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <!-- Other Projects -->
-            <div>
-                <h3 class="text-2xl font-semibold text-color-900 mb-8">Other Projects</h3>
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="card fade-in-up">
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="flex items-center gap-3">
-                                <div class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center" style="color: #2563eb;">
-                                    <i class="fas fa-globe"></i>
-                                </div>
-                                <h4 class="font-semibold text-color-900">MEED Foundation Website</h4>
-                            </div>
-                            <div class="flex gap-2">
-                                
-                                <a href="https://www.meedfoundation.org/"    target="_blank" 
-                                class="text-color-600 hover:text-blue-600">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <p class="text-sm text-color-600 mb-3">The official website of MEED Foundation, fully developed and deployed by me, developed using NodeJS, TailwindCSS, and MongoDB for the news articles and job postings, also used Apache ECharts to develop the interactive charts under Projects.</p>
-                        <div class="flex flex-wrap gap-1">
-                            <span class="tech-badge">Node.js</span>
-                            <span class="tech-badge">MongoDB</span>
-                            <span class="tech-badge">Apache ECharts</span>
-                            <span class="tech-badge">TailwindCSS</span>
-                        </div>
-                    </div>
 
                     
                 </div>
             </div>
+
+            
         </div>
     </section>
 
@@ -599,18 +621,18 @@
                             </div>
                             <div class="flex items-center gap-2 text-sm text-color-500">
                                 <i class="fas fa-map-marker-alt"></i>
-                                <span>Erbil, Kurdistan Region of Iraq</span>
+                                <span>Erbil</span>
                             </div>
                             <span class="badge">Conference</span>
                         </div>
                     </div>
                     <ul class="space-y-2 mb-4">
                         <li class="text-color-600 flex items-start gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-white/60 mt-2 flex-shrink-0"></span>
                             Presented our capstone project "Dolus" at the first AI conference in Iraq.
                         </li>
                         <li class="text-color-600 flex items-start gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-white/60 mt-2 flex-shrink-0"></span>
                             Demonstrated AI integration in game development using OpenAI and Godot engine.
                         </li>
                     </ul>
@@ -632,18 +654,18 @@
                             </div>
                             <div class="flex items-center gap-2 text-sm text-color-500">
                                 <i class="fas fa-map-marker-alt"></i>
-                                <span>AUIS, Sulaimani</span>
+                                <span>AUIS, Slemani</span>
                             </div>
                             <span class="badge">University Event</span>
                         </div>
                     </div>
                     <ul class="space-y-2 mb-4">
                         <li class="text-color-600 flex items-start gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-white/60 mt-2 flex-shrink-0"></span>
                             Presented "Dolus" and showcased innovative AI integration in game development using OpenAI for dynamic character generation.
                         </li>
                         <li class="text-color-600 flex items-start gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-white/60 mt-2 flex-shrink-0"></span>
                             Many people were able to play the game and enjoy the experience, and it was a great opportunity to showcase our work to the community.
                         </li>
                     </ul>
@@ -665,18 +687,18 @@
                             </div>
                             <div class="flex items-center gap-2 text-sm text-color-500">
                                 <i class="fas fa-map-marker-alt"></i>
-                                <span>AUIS, Sulaimani</span>
+                                <span>AUIS, Slemani</span>
                             </div>
                             <span class="badge">University Event</span>
                         </div>
                     </div>
                     <ul class="space-y-2 mb-4">
                         <li class="text-color-600 flex items-start gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-white/60 mt-2 flex-shrink-0"></span>
                             Developed a random number generating game.
                         </li>
                         <li class="text-color-600 flex items-start gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-white/60 mt-2 flex-shrink-0"></span>
                             Created a Java terminal based application for English to Morse code and ASCII code conversion.
                         </li>
                     </ul>
@@ -685,11 +707,11 @@
         </div>
     </section>
 
-    <!-- Training & Development Section -->
+    <!-- Courses & Certifications Section -->
     <section id="training" class="py-20 px-4">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16 fade-in">
-                <h2 class="text-4xl font-bold text-color-900 mb-4">Training & Development</h2>
+                <h2 class="text-4xl font-bold text-color-900 mb-4">Courses & Certifications</h2>
                 <p class="text-lg text-color-600">
                     Professional development programs and specialized training
                 </p>
@@ -698,41 +720,93 @@
             <div class="space-y-8">
                 <!-- India Technopreneurship Program -->
                 <div class="card fade-in-left">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-4">
-                        <div>
-                            <h3 class="text-xl font-semibold text-color-900">Technopreneurship: Creating Technology-Enabled Startups & Ecosystem</h3>
-                            <div class="flex items-center gap-2 text-color-600 mt-1">
-                                <span class="font-medium">Entrepreneurship Development Institute of India (EDII)</span>
-                            </div>
-                        </div>
-                        <div class="flex flex-col gap-2">
-                            <div class="flex items-center gap-2 text-sm text-color-500">
-                                <i class="fas fa-calendar"></i>
-                                <span>February 2025 - March 2025</span>
-                            </div>
-                            <div class="flex items-center gap-2 text-sm text-color-500">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Ahmedabad, India</span>
-                            </div>
-                            <span class="badge">International Training</span>
+                    <div class="mb-4">
+                        <h3 class="text-xl font-semibold text-color-900">Technopreneurship: Creating Technology-Enabled Startups & Ecosystem</h3>
+                        <div class="flex items-center gap-2 text-color-600 mt-1">
+                            <span class="font-medium">Entrepreneurship Development Institute of India (EDII)</span>
                         </div>
                     </div>
                     <ul class="space-y-2 mb-4">
                         <li class="text-color-600 flex items-start gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-white/60 mt-2 flex-shrink-0"></span>
                             Comprehensive program focused on technology-driven innovation and startup ecosystem development.
                         </li>
                         <li class="text-color-600 flex items-start gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-white/60 mt-2 flex-shrink-0"></span>
                             Organized by ITEC division of the Ministry of External Affairs, Government of India.
                         </li>
                         <li class="text-color-600 flex items-start gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-white/60 mt-2 flex-shrink-0"></span>
                             Nominated by the office of the Deputy Prime Minister, and chosen as one of the 30 delegates from the Kurdistan Region of Iraq to attend the program.
                         </li>
                         <li class="text-color-600 flex items-start gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-white/60 mt-2 flex-shrink-0"></span>
                             Connected with international professionals and gained practical tools for startup development.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Godot Game Development Certificate -->
+                <div class="card fade-in-left" style="animation-delay: 0.1s">
+                    <div class="mb-4">
+                        <h3 class="text-xl font-semibold text-color-900">Intro to Godot 4 Game Development</h3>
+                        <div class="flex items-center gap-2 text-color-600 mt-1">
+                            <span class="font-medium">Zenva Academy</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-2 mb-4">
+                        <li class="text-color-600 flex items-start gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-white/60 mt-2 flex-shrink-0"></span>
+                            Successfully completed comprehensive Godot 4 game development curriculum covering game mechanics, scripting, and project development.
+                        </li>
+                        
+                    </ul>
+                </div>
+
+                <!-- Node.js Course -->
+                <div class="card fade-in-left" style="animation-delay: 0.2s">
+                    <div class="mb-4">
+                        <h3 class="text-xl font-semibold text-color-900">Node.js - Beginner to Advance Course</h3>
+                        <div class="flex items-center gap-2 text-color-600 mt-1">
+                            <span class="font-medium">Udemy</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-2 mb-4">
+                        <li class="text-color-600 flex items-start gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-white/60 mt-2 flex-shrink-0"></span>
+                            Comprehensive Node.js course covering beginner to advanced concepts including ORM, SQL, NoSQL databases.
+                        </li>
+                        <li class="text-color-600 flex items-start gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-white/60 mt-2 flex-shrink-0"></span>
+                            Learned Postman testing, Express.js framework, MongoDB aggregation, and deployment strategies.
+                        </li>
+                        <li class="text-color-600 flex items-start gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-white/60 mt-2 flex-shrink-0"></span>
+                            Completed multiple hands-on projects to reinforce learning and build practical experience.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Flutter & Dart Course -->
+                <div class="card fade-in-left" style="animation-delay: 0.3s">
+                    <div class="mb-4">
+                        <h3 class="text-xl font-semibold text-color-900">Flutter & Dart - The Complete Guide [2025 Edition]</h3>
+                        <div class="flex items-center gap-2 text-color-600 mt-1">
+                            <span class="font-medium">Udemy</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-2 mb-4">
+                        <li class="text-color-600 flex items-start gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-white/60 mt-2 flex-shrink-0"></span>
+                            Complete Flutter and Dart development course covering the latest 2025 edition features and best practices.
+                        </li>
+                        <li class="text-color-600 flex items-start gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-white/60 mt-2 flex-shrink-0"></span>
+                            Learned cross-platform mobile app development for both iOS and Android platforms.
+                        </li>
+                        <li class="text-color-600 flex items-start gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-white/60 mt-2 flex-shrink-0"></span>
+                            Gained expertise in Dart programming language and Flutter framework for building modern mobile applications.
                         </li>
                     </ul>
                 </div>
@@ -754,7 +828,7 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
                 <div class="card fade-in-up">
                     <div class="flex items-center gap-2 mb-4">
-                        <div class="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600">
+                        <div class="w-8 h-8 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white">
                             <i class="fas fa-code"></i>
                         </div>
                         <h3 class="text-lg font-semibold text-color-900">Programming Languages</h3>
@@ -772,7 +846,7 @@
 
                 <div class="card fade-in-up" style="animation-delay: 0.1s">
                     <div class="flex items-center gap-2 mb-4">
-                        <div class="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600">
+                        <div class="w-8 h-8 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white">
                             <i class="fas fa-globe"></i>
                         </div>
                         <h3 class="text-lg font-semibold text-color-900">Frameworks & Tools</h3>
@@ -788,7 +862,7 @@
 
                 <div class="card fade-in-up" style="animation-delay: 0.2s">
                     <div class="flex items-center gap-2 mb-4">
-                        <div class="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600">
+                        <div class="w-8 h-8 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white">
                             <i class="fas fa-database"></i>
                         </div>
                         <h3 class="text-lg font-semibold text-color-900">Database Management Systems</h3>
@@ -803,7 +877,7 @@
 
                 <div class="card fade-in-up" style="animation-delay: 0.3s">
                     <div class="flex items-center gap-2 mb-4">
-                        <div class="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600">
+                        <div class="w-8 h-8 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white">
                             <i class="fas fa-cloud"></i>
                         </div>
                         <h3 class="text-lg font-semibold text-color-900">Cloud & Infrastructure</h3>
@@ -817,7 +891,7 @@
 
                 <div class="card fade-in-up" style="animation-delay: 0.4s">
                     <div class="flex items-center gap-2 mb-4">
-                        <div class="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600">
+                        <div class="w-8 h-8 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white">
                             <i class="fas fa-users"></i>
                         </div>
                         <h3 class="text-lg font-semibold text-color-900">Soft Skills</h3>
@@ -835,7 +909,7 @@
             <!-- Languages -->
             <div class="card fade-in">
                 <div class="flex items-center gap-2 mb-6">
-                    <div class="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600">
+                    <div class="w-8 h-8 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white">
                         <i class="fas fa-globe"></i>
                     </div>
                     <h3 class="text-xl font-semibold text-color-900">Languages</h3>
@@ -907,36 +981,36 @@
                         <h3 class="text-2xl font-semibold text-color-900 mb-6">Contact Information</h3>
 
                         <div class="flex items-center gap-4">
-                            <div class="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600">
+                            <div class="w-10 h-10 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white">
                                 <i class="fas fa-envelope"></i>
                             </div>
                             <div>
                                 <div class="font-medium text-color-900">Email</div>
-                                <a href="mailto:lawenhunar002@gmail.com" class="text-color-600 hover:text-blue-600 transition-colors">
+                                <a href="mailto:lawenhunar002@gmail.com" class="text-color-600 hover:text-white transition-colors">
                                     lawenhunar002@gmail.com
                                 </a>
                             </div>
                         </div>
 
                         <div class="flex items-center gap-4">
-                            <div class="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600">
+                            <div class="w-10 h-10 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white">
                                 <i class="fas fa-phone"></i>
                             </div>
                             <div>
                                 <div class="font-medium text-color-900">Phone</div>
-                                <a href="tel:+9647701908678" class="text-color-600 hover:text-blue-600 transition-colors">
+                                <a href="tel:+9647701908678" class="text-color-600 hover:text-white transition-colors">
                                     (964) 770 190 8678
                                 </a>
                             </div>
                         </div>
 
                         <div class="flex items-center gap-4">
-                            <div class="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600">
+                            <div class="w-10 h-10 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white">
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
                             <div>
                                 <div class="font-medium text-color-900">Location</div>
-                                <span class="text-color-600">Nawroz City, Slemani, Iraq</span>
+                                <span class="text-color-600">Nawroz City, Slemani, Kurdistan Region of Iraq</span>
                             </div>
                         </div>
 

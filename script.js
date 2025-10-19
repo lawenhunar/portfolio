@@ -282,3 +282,72 @@ window.addEventListener("load", () => {
   document.body.classList.add("loaded")
 })
 
+// UST GYM Screenshots Modal
+function showScreenshots() {
+  // Create modal overlay
+  const modal = document.createElement('div');
+  modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+  modal.id = 'screenshots-modal';
+  
+  // Create modal content
+  const modalContent = document.createElement('div');
+  modalContent.className = 'bg-white rounded-lg p-6 max-w-4xl max-h-[90vh] overflow-y-auto mx-4';
+  
+  modalContent.innerHTML = `
+    <div class="flex justify-between items-center mb-4">
+      <h3 class="text-2xl font-bold text-gray-900">UST GYM App Screenshots</h3>
+      <button onclick="closeScreenshots()" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+    </div>
+    <div class="text-center text-gray-600 mb-6">
+      <p>Mobile gym management application built with Flutter</p>
+      <p class="text-sm">Features: Workout assignment, member management, training programs</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="text-center">
+        <div class="bg-gray-200 rounded-lg p-8 mb-2">
+          <i class="fas fa-mobile-alt text-4xl text-gray-400"></i>
+        </div>
+        <p class="text-sm text-gray-600">Login Screen</p>
+      </div>
+      <div class="text-center">
+        <div class="bg-gray-200 rounded-lg p-8 mb-2">
+          <i class="fas fa-mobile-alt text-4xl text-gray-400"></i>
+        </div>
+        <p class="text-sm text-gray-600">Dashboard</p>
+      </div>
+      <div class="text-center">
+        <div class="bg-gray-200 rounded-lg p-8 mb-2">
+          <i class="fas fa-mobile-alt text-4xl text-gray-400"></i>
+        </div>
+        <p class="text-sm text-gray-600">Workout Assignment</p>
+      </div>
+      <div class="text-center">
+        <div class="bg-gray-200 rounded-lg p-8 mb-2">
+          <i class="fas fa-mobile-alt text-4xl text-gray-400"></i>
+        </div>
+        <p class="text-sm text-gray-600">Member Management</p>
+      </div>
+    </div>
+    <div class="mt-6 text-center">
+      <p class="text-sm text-gray-500">Screenshots coming soon - App currently in development</p>
+    </div>
+  `;
+  
+  modal.appendChild(modalContent);
+  document.body.appendChild(modal);
+  
+  // Close modal when clicking outside
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeScreenshots();
+    }
+  });
+}
+
+function closeScreenshots() {
+  const modal = document.getElementById('screenshots-modal');
+  if (modal) {
+    modal.remove();
+  }
+}
+
