@@ -163,7 +163,7 @@ html {
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid #00ff7f;
   border-radius: 8px;
-  padding: 24px;
+  padding: 16px;
   box-shadow:
     0 8px 32px rgba(0, 255, 127, 0.1),
     inset 0 1px 0 rgba(0, 255, 127, 0.2);
@@ -201,7 +201,7 @@ html {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   color: #00ff7f;
-  padding: 12px 24px;
+  padding: 8px 16px;
   border-radius: 6px;
   text-decoration: none;
   display: inline-flex;
@@ -249,7 +249,7 @@ html {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   color: #e0e0e0;
-  padding: 12px 24px;
+  padding: 8px 16px;
   border: 1px solid rgba(0, 255, 127, 0.3);
   border-radius: 6px;
   text-decoration: none;
@@ -299,8 +299,8 @@ html {
   color: #00ff7f;
   font-size: 24px;
   transition: all 0.3s ease;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 8px;
   background: rgba(20, 20, 20, 0.8);
   backdrop-filter: blur(10px);
@@ -322,8 +322,8 @@ html {
 }
 
 .social-icon {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 8px;
   background: rgba(20, 20, 20, 0.8);
   backdrop-filter: blur(10px);
@@ -351,7 +351,7 @@ html {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   color: #00ff7f;
-  padding: 6px 14px;
+  padding: 4px 12px;
   border-radius: 4px;
   font-size: 12px;
   font-weight: 600;
@@ -366,7 +366,7 @@ html {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   color: #00ff7f;
-  padding: 6px 14px;
+  padding: 4px 12px;
   border-radius: 4px;
   font-size: 12px;
   font-weight: 600;
@@ -407,16 +407,16 @@ html {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  .text-4xl {
+    font-size: 2rem;
+  }
+
   .text-5xl {
     font-size: 2.5rem;
   }
 
-  .text-7xl {
-    font-size: 3rem;
-  }
-
   .card {
-    padding: 16px;
+    padding: 12px;
   }
 }
 
@@ -476,7 +476,7 @@ h1, h2, h3, h4, h5, h6 {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   color: #00ff7f;
-  padding: 12px 24px;
+  padding: 8px 16px;
   border-radius: 8px;
   text-decoration: none;
   display: inline-flex;
@@ -568,8 +568,8 @@ h1, h2, h3, h4, h5, h6 {
 
 #gantt, #languages {
   width: 100%;
-  max-width: 600px;
-  height: 300px;
+  max-width: 450px;
+  height: 220px;
   margin: 0 auto 2rem auto;
 }
 
