@@ -478,15 +478,18 @@
                 <h3 class="text-xl font-semibold text-color-900 mb-8">Projects</h3>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Project 5 - MEED Foundation Website -->
-                    <div class="card project-card fade-in-up flex flex-col">
+                    <div class="card project-card fade-in-up flex flex-col relative">
+                        <!-- GitHub Icon -->
+                        
+
                         <!-- GitHub-style Header -->
-                        <div class="flex items-center gap-3 mb-3">
+                        <div class="flex items-center gap-3 mb-3 pr-12">
                             <div class="w-10 h-10 rounded-lg bg-gray-800 border border-gray-600 flex items-center justify-center text-green-400">
                                 <i class="fas fa-globe"></i>
                             </div>
                             <div class="flex-1">
                                 <h4 class="text-lg font-semibold text-green-400 font-mono">meed-foundation-website</h4>
-                                <div class="text-xs text-gray-400">🌟 Live production site</div>
+                                <div class="text-xs text-gray-400">Live production site</div>
                             </div>
                         </div>
 
@@ -514,7 +517,7 @@
                             <span class="tech-badge">TailwindCSS</span>
                         </div>
 
-                        <!-- GitHub-style Buttons -->
+                        <!-- Action Buttons -->
                         <div class="flex gap-2 mt-auto">
                             <a href="https://www.meedfoundation.org/" target="_blank" class="btn-primary flex-1">
                                 <i class="fas fa-external-link-alt mr-2"></i>
@@ -523,16 +526,75 @@
                         </div>
                     </div>
 
-                    <!-- Project 6 - UST GYM App -->
-                    <div class="card project-card fade-in-up flex flex-col">
+                    <!-- Project - Namakan Messages -->
+                    <div class="card project-card fade-in-up flex flex-col relative">
+                        <!-- GitHub Icon -->
+                        <a href="https://github.com/lawenhunar/namakan-messages" target="_blank" class="absolute top-3 right-3 w-8 h-8 rounded-lg bg-gray-800/80 border border-gray-600 flex items-center justify-center text-green-400 hover:bg-gray-700 transition-colors">
+                            <i class="fab fa-github text-sm"></i>
+                        </a>
+
                         <!-- GitHub-style Header -->
-                        <div class="flex items-center gap-3 mb-3">
+                        <div class="flex items-center gap-3 mb-3 pr-12">
+                            <div class="w-10 h-10 rounded-lg bg-gray-800 border border-gray-600 flex items-center justify-center text-green-400">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-lg font-semibold text-green-400 font-mono">namakan-messages</h4>
+                                <div class="text-xs text-gray-400">Kurdish messaging platform</div>
+                            </div>
+                        </div>
+
+                        <!-- Project Description -->
+                        <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                            A beautiful messaging platform built specifically for Kurdish language speakers, featuring RTL support and modern design. Users can send messages, share content, and connect in their native language.
+                        </p>
+
+                        <!-- File Structure Preview -->
+                        <div class="bg-gray-800 rounded p-3 mb-4 text-xs font-mono">
+                            <div class="text-gray-400 mb-1">📁 namakan-messages/</div>
+                            <div class="ml-2 text-green-400">├── frontend/</div>
+                            <div class="ml-4 text-blue-400">│   ├── components/</div>
+                            <div class="ml-4 text-blue-400">│   ├── pages/</div>
+                            <div class="ml-4 text-blue-400">│   └── assets/</div>
+                            <div class="ml-2 text-green-400">├── backend/</div>
+                            <div class="ml-4 text-blue-400">│   ├── routes/</div>
+                            <div class="ml-4 text-blue-400">│   ├── models/</div>
+                            <div class="ml-2 text-yellow-400">└── package.json</div>
+                        </div>
+
+                        <!-- Tech Stack -->
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tech-badge">React</span>
+                            <span class="tech-badge">Node.js</span>
+                            <span class="tech-badge">MongoDB</span>
+                            <span class="tech-badge">RTL Support</span>
+                            <span class="tech-badge">Kurdish Language</span>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="flex gap-2 mt-auto">
+                            <a href="https://namakan-messages.onrender.com/" target="_blank" class="btn-primary flex-1">
+                                <i class="fas fa-external-link-alt mr-2"></i>
+                                Live Demo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 6 - UST GYM App -->
+                    <div class="card project-card fade-in-up flex flex-col relative">
+                        <!-- GitHub Icon -->
+                        <a href="https://github.com/lawenhunar/ust-gym-app" target="_blank" class="absolute top-3 right-3 w-8 h-8 rounded-lg bg-gray-800/80 border border-gray-600 flex items-center justify-center text-green-400 hover:bg-gray-700 transition-colors">
+                            <i class="fab fa-github text-sm"></i>
+                        </a>
+
+                        <!-- GitHub-style Header -->
+                        <div class="flex items-center gap-3 mb-3 pr-12">
                             <div class="w-10 h-10 rounded-lg bg-gray-800 border border-gray-600 flex items-center justify-center text-green-400">
                                 <i class="fas fa-dumbbell"></i>
                             </div>
                             <div class="flex-1">
                                 <h4 class="text-lg font-semibold text-green-400 font-mono">ust-gym-app</h4>
-                                <div class="text-xs text-gray-400">📱 Mobile fitness platform</div>
+                                <div class="text-xs text-gray-400">Mobile fitness platform</div>
                             </div>
                         </div>
 
@@ -560,7 +622,7 @@
                             <span class="tech-badge">Gym Management</span>
                         </div>
 
-                        <!-- GitHub-style Buttons -->
+                        <!-- Action Buttons -->
                         <div class="flex gap-2 mt-auto">
                             <button onclick="showScreenshots()" class="btn-primary flex-1">
                                 <i class="fas fa-images mr-2"></i>
@@ -569,15 +631,20 @@
                         </div>
                     </div>
                     <!-- Project 1 - Dolus Game -->
-                    <div class="card project-card fade-in-up flex flex-col">
+                    <div class="card project-card fade-in-up flex flex-col relative">
+                        <!-- GitHub Icon -->
+                        <a href="https://github.com/lawenhunar/Mystery-solver-game-version-control" target="_blank" class="absolute top-3 right-3 w-8 h-8 rounded-lg bg-gray-800/80 border border-gray-600 flex items-center justify-center text-green-400 hover:bg-gray-700 transition-colors">
+                            <i class="fab fa-github text-sm"></i>
+                        </a>
+
                         <!-- GitHub-style Header -->
-                        <div class="flex items-center gap-3 mb-3">
+                        <div class="flex items-center gap-3 mb-3 pr-12">
                             <div class="w-10 h-10 rounded-lg bg-gray-800 border border-gray-600 flex items-center justify-center text-green-400">
                                 <i class="fas fa-gamepad"></i>
                             </div>
                             <div class="flex-1">
                                 <h4 class="text-lg font-semibold text-green-400 font-mono">dolus-ai-game</h4>
-                                <div class="text-xs text-gray-400">🎮 AI-powered mystery game</div>
+                                <div class="text-xs text-gray-400">AI-powered mystery game</div>
                             </div>
                         </div>
 
@@ -606,25 +673,27 @@
                             <span class="tech-badge">Game Development</span>
                         </div>
 
-                        <!-- GitHub-style Buttons -->
+                        <!-- Action Buttons -->
                         <div class="flex gap-2 mt-auto">
-                            <a href="https://github.com/lawenhunar/Mystery-solver-game-version-control" target="_blank" class="btn-primary flex-1">
-                                <i class="fab fa-github mr-2"></i>
-                                View Source
-                            </a>
+                            <div class="flex-1"></div>
                         </div>
                     </div>
 
                     <!-- Project 2 - ASCII/Morse Code Converter -->
-                    <div class="card project-card fade-in-up flex flex-col">
+                    <div class="card project-card fade-in-up flex flex-col relative">
+                        <!-- GitHub Icon -->
+                        <a href="https://github.com/lawenhunar/morse-ascii_converter" target="_blank" class="absolute top-3 right-3 w-8 h-8 rounded-lg bg-gray-800/80 border border-gray-600 flex items-center justify-center text-green-400 hover:bg-gray-700 transition-colors">
+                            <i class="fab fa-github text-sm"></i>
+                        </a>
+
                         <!-- GitHub-style Header -->
-                        <div class="flex items-center gap-3 mb-3">
+                        <div class="flex items-center gap-3 mb-3 pr-12">
                             <div class="w-10 h-10 rounded-lg bg-gray-800 border border-gray-600 flex items-center justify-center text-green-400">
                                 <i class="fas fa-code"></i>
                             </div>
                             <div class="flex-1">
                                 <h4 class="text-lg font-semibold text-green-400 font-mono">morse-ascii-converter</h4>
-                                <div class="text-xs text-gray-400">🔐 Encryption utility</div>
+                                <div class="text-xs text-gray-400">Encryption utility</div>
                             </div>
                         </div>
 
@@ -650,25 +719,27 @@
                             <span class="tech-badge">Algorithm Design</span>
                         </div>
 
-                        <!-- GitHub-style Buttons -->
+                        <!-- Action Buttons -->
                         <div class="flex gap-2 mt-auto">
-                            <a href="https://github.com/lawenhunar/morse-ascii_converter" target="_blank" class="btn-primary flex-1">
-                                <i class="fab fa-github mr-2"></i>
-                                View Source
-                            </a>
+                            <div class="flex-1"></div>
                         </div>
                     </div>
 
                     <!-- Project 3 - Movie Listing Website -->
-                    <div class="card project-card fade-in-up flex flex-col">
+                    <div class="card project-card fade-in-up flex flex-col relative">
+                        <!-- GitHub Icon -->
+                        <a href="https://github.com/lawenhunar/Movie-Library" target="_blank" class="absolute top-3 right-3 w-8 h-8 rounded-lg bg-gray-800/80 border border-gray-600 flex items-center justify-center text-green-400 hover:bg-gray-700 transition-colors">
+                            <i class="fab fa-github text-sm"></i>
+                        </a>
+
                         <!-- GitHub-style Header -->
-                        <div class="flex items-center gap-3 mb-3">
+                        <div class="flex items-center gap-3 mb-3 pr-12">
                             <div class="w-10 h-10 rounded-lg bg-gray-800 border border-gray-600 flex items-center justify-center text-green-400">
                                 <i class="fas fa-globe"></i>
                             </div>
                             <div class="flex-1">
                                 <h4 class="text-lg font-semibold text-green-400 font-mono">movie-listing-website</h4>
-                                <div class="text-xs text-gray-400">🎬 Full-stack CRUD app</div>
+                                <div class="text-xs text-gray-400">Full-stack CRUD app</div>
                             </div>
                         </div>
 
@@ -697,25 +768,27 @@
                             <span class="tech-badge">CRUD</span>
                         </div>
 
-                        <!-- GitHub-style Buttons -->
+                        <!-- Action Buttons -->
                         <div class="flex gap-2 mt-auto">
-                            <a href="https://github.com/lawenhunar/Movie-Library" target="_blank" class="btn-primary flex-1">
-                                <i class="fab fa-github mr-2"></i>
-                                View Source
-                            </a>
+                            <div class="flex-1"></div>
                         </div>
                     </div>
 
                     <!-- Project 4 - Number Hunter Game -->
-                    <div class="card project-card fade-in-up flex flex-col">
+                    <div class="card project-card fade-in-up flex flex-col relative">
+                        <!-- GitHub Icon -->
+                        <a href="https://github.com/lawenhunar/guess-the-number" target="_blank" class="absolute top-3 right-3 w-8 h-8 rounded-lg bg-gray-800/80 border border-gray-600 flex items-center justify-center text-green-400 hover:bg-gray-700 transition-colors">
+                            <i class="fab fa-github text-sm"></i>
+                        </a>
+
                         <!-- GitHub-style Header -->
-                        <div class="flex items-center gap-3 mb-3">
+                        <div class="flex items-center gap-3 mb-3 pr-12">
                             <div class="w-10 h-10 rounded-lg bg-gray-800 border border-gray-600 flex items-center justify-center text-green-400">
                                 <i class="fas fa-gamepad"></i>
                             </div>
                             <div class="flex-1">
                                 <h4 class="text-lg font-semibold text-green-400 font-mono">number-hunter-game</h4>
-                                <div class="text-xs text-gray-400">🎯 Classic guessing game</div>
+                                <div class="text-xs text-gray-400">Classic guessing game</div>
                             </div>
                         </div>
 
@@ -740,11 +813,11 @@
                             <span class="tech-badge">JavaScript</span>
                         </div>
 
-                        <!-- GitHub-style Buttons -->
+                        <!-- Action Buttons -->
                         <div class="flex gap-2 mt-auto">
-                            <a href="https://github.com/lawenhunar/guess-the-number" target="_blank" class="btn-primary flex-1">
-                                <i class="fab fa-github mr-2"></i>
-                                View Source
+                            <a href="https://guessthenumberauis.netlify.app/" target="_blank" class="btn-primary flex-1">
+                                <i class="fas fa-play mr-2"></i>
+                                Live Demo
                             </a>
                         </div>
                     </div>
