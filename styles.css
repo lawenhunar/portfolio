@@ -41,12 +41,12 @@ body::after {
   width: 100%;
   height: 100%;
   background-image:
-    linear-gradient(rgba(0, 255, 127, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 255, 127, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(0, 255, 127, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 127, 0.02) 1px, transparent 1px);
   background-size: 50px 50px;
   pointer-events: none;
   z-index: -1;
-  animation: matrix-move 20s linear infinite;
+  animation: matrix-move 25s linear infinite;
 }
 
 @keyframes matrix-move {
@@ -405,18 +405,81 @@ html {
 
 
 
-/* Responsive adjustments */
+/* Mobile Responsive adjustments */
 @media (max-width: 768px) {
+  /* Background fixes for mobile */
+  body {
+    background-attachment: scroll; /* Fix for mobile background issues */
+  }
+
+  body::after {
+    animation: none; /* Disable matrix animation on mobile */
+    background-size: 30px 30px; /* Smaller grid on mobile */
+  }
+
+  /* Text size adjustments */
   .text-4xl {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
 
   .text-5xl {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
   }
 
+  /* Card adjustments */
   .card {
     padding: 12px;
+    margin-bottom: 1rem;
+  }
+
+  /* Hero section mobile improvements */
+  .professional-photo {
+    margin-bottom: 1rem;
+  }
+
+  /* Button improvements for mobile */
+  .btn-primary, .btn-secondary {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  /* Navigation mobile improvements */
+  .nav-link {
+    padding: 8px 0;
+  }
+
+  /* Terminal window mobile adjustments */
+  .typing-animation {
+    font-size: 14px;
+  }
+
+  /* Social links mobile */
+  .social-link {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Extra small screens */
+  .text-3xl {
+    font-size: 1.5rem;
+  }
+
+  .text-2xl {
+    font-size: 1.25rem;
+  }
+
+  /* Hero section on very small screens */
+  .hero-terminal {
+    max-width: 95%;
+    margin: 0 auto;
+  }
+
+  /* About section cards on mobile */
+  .about-card {
+    margin-bottom: 1.5rem;
   }
 }
 
