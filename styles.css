@@ -8,8 +8,8 @@
 body {
   font-family: "JetBrains Mono", "Fira Code", "Consolas", "Monaco", "Courier New", monospace;
   line-height: 1.6;
+  background: #0a0a0a; /* Fallback for browsers that don't support gradients */
   background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2d2d2d 100%);
-  background-attachment: fixed;
   min-height: 100vh;
   position: relative;
   font-feature-settings: "liga" 1, "calt" 1;
@@ -407,10 +407,6 @@ html {
 
 /* Mobile Responsive adjustments */
 @media (max-width: 768px) {
-  /* Background fixes for mobile */
-  body {
-    background-attachment: scroll; /* Fix for mobile background issues */
-  }
 
   body::after {
     animation: none; /* Disable matrix animation on mobile */
