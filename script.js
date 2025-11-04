@@ -282,54 +282,112 @@ window.addEventListener("load", () => {
   document.body.classList.add("loaded")
 })
 
-// UST GYM Screenshots Modal
-function showScreenshots() {
+// Screenshots Modal Function
+function showScreenshots(appName) {
+  // Define screenshot configurations for each app
+  const appConfigs = {
+    'ust-gym': {
+      title: 'UST GYM App Screenshots',
+      description: 'Mobile gym management application built with Flutter',
+      features: 'Features: Workout assignment, member management, training programs',
+      screenshots: [
+        'UST-GYM photos/Screenshot 2025-11-04 183159.png',
+        'UST-GYM photos/Screenshot 2025-11-04 183219.png',
+        'UST-GYM photos/Screenshot 2025-11-04 183236.png',
+        'UST-GYM photos/Screenshot 2025-11-04 183255.png',
+        'UST-GYM photos/Screenshot 2025-11-04 183317.png',
+        'UST-GYM photos/Screenshot 2025-11-04 183336.png',
+        'UST-GYM photos/Screenshot 2025-11-04 183347.png',
+        'UST-GYM photos/Screenshot 2025-11-04 183404.png',
+        'UST-GYM photos/Screenshot 2025-11-04 183423.png',
+        'UST-GYM photos/Screenshot 2025-11-04 183435.png'
+      ]
+    },
+    'kazhi-driver': {
+      title: 'Kazhi Delivery Driver App Screenshots',
+      description: 'Mobile application for delivery drivers built with Flutter',
+      features: 'Features: Order management, delivery tracking, navigation',
+      screenshots: [
+        'Kazhi-driver/Screenshot 2025-11-04 173809.png',
+        'Kazhi-driver/Screenshot 2025-11-04 173901.png',
+        'Kazhi-driver/Screenshot 2025-11-04 173930.png',
+        'Kazhi-driver/Screenshot 2025-11-04 173946.png',
+        'Kazhi-driver/Screenshot 2025-11-04 174111.png',
+        'Kazhi-driver/Screenshot 2025-11-04 174133.png',
+        'Kazhi-driver/Screenshot 2025-11-04 174633.png'
+      ]
+    },
+    'kazhi-shop': {
+      title: 'Kazhi Shop App Screenshots',
+      description: 'Mobile application for shops to order deliveries built with Flutter',
+      features: 'Features: Order placement, delivery tracking, call center integration',
+      screenshots: [
+        'Kazhi-shop/Screenshot 2025-11-04 163433.png',
+        'Kazhi-shop/Screenshot 2025-11-04 163457.png',
+        'Kazhi-shop/Screenshot 2025-11-04 163550.png',
+        'Kazhi-shop/Screenshot 2025-11-04 163614.png',
+        'Kazhi-shop/Screenshot 2025-11-04 163639.png',
+        'Kazhi-shop/Screenshot 2025-11-04 163833.png',
+        'Kazhi-shop/Screenshot 2025-11-04 163904.png',
+        'Kazhi-shop/Screenshot 2025-11-04 163922.png',
+        'Kazhi-shop/Screenshot 2025-11-04 164021.png'
+      ]
+    }
+  };
+
+  const config = appConfigs[appName];
+  if (!config) {
+    console.error('Unknown app name:', appName);
+    return;
+  }
+
+  // Remove any existing modal
+  const existingModal = document.getElementById('screenshots-modal');
+  if (existingModal) {
+    existingModal.remove();
+  }
+
   // Create modal overlay
   const modal = document.createElement('div');
-  modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+  modal.className = 'fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4';
   modal.id = 'screenshots-modal';
+  modal.style.backdropFilter = 'blur(4px)';
   
   // Create modal content
   const modalContent = document.createElement('div');
-  modalContent.className = 'bg-white rounded-lg p-6 max-w-4xl max-h-[90vh] overflow-y-auto mx-4';
+  modalContent.className = 'bg-gray-900 rounded-lg p-4 md:p-6 max-w-6xl max-h-[90vh] overflow-y-auto mx-auto border border-green-400/30';
   
+  // Build screenshots grid
+  const screenshotsHTML = config.screenshots.map((screenshot, index) => {
+    // URL encode the screenshot path to handle spaces in folder/file names
+    const encodedScreenshot = screenshot.split('/').map(part => encodeURIComponent(part)).join('/');
+    return `
+    <div class="fade-in-up" style="animation-delay: ${index * 0.1}s">
+      <img 
+        src="${encodedScreenshot}" 
+        alt="Screenshot ${index + 1}" 
+        class="w-full h-auto rounded-lg border border-gray-700 hover:border-green-400/50 transition-colors cursor-pointer shadow-lg"
+        onclick="openImageModal('${encodedScreenshot}')"
+        loading="lazy"
+      />
+    </div>
+  `;
+  }).join('');
+
   modalContent.innerHTML = `
-    <div class="flex justify-between items-center mb-4">
-      <h3 class="text-2xl font-bold text-gray-900">UST GYM App Screenshots</h3>
-      <button onclick="closeScreenshots()" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+    <div class="flex justify-between items-center mb-4 pb-4 border-b border-gray-700">
+      <div>
+        <h3 class="text-xl md:text-2xl font-bold text-green-400 font-mono">${config.title}</h3>
+        <p class="text-sm text-gray-400 mt-1">${config.description}</p>
+      </div>
+      <button onclick="closeScreenshots()" class="text-gray-400 hover:text-white text-3xl leading-none transition-colors">&times;</button>
     </div>
-    <div class="text-center text-gray-600 mb-6">
-      <p>Mobile gym management application built with Flutter</p>
-      <p class="text-sm">Features: Workout assignment, member management, training programs</p>
+    <div class="text-center text-gray-400 mb-6 text-sm">
+      <p>${config.features}</p>
+      <p class="mt-2 text-xs text-gray-500">Click on any screenshot to view full size</p>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <div class="text-center">
-        <div class="bg-gray-200 rounded-lg p-8 mb-2">
-          <i class="fas fa-mobile-alt text-4xl text-gray-400"></i>
-        </div>
-        <p class="text-sm text-gray-600">Login Screen</p>
-      </div>
-      <div class="text-center">
-        <div class="bg-gray-200 rounded-lg p-8 mb-2">
-          <i class="fas fa-mobile-alt text-4xl text-gray-400"></i>
-        </div>
-        <p class="text-sm text-gray-600">Dashboard</p>
-      </div>
-      <div class="text-center">
-        <div class="bg-gray-200 rounded-lg p-8 mb-2">
-          <i class="fas fa-mobile-alt text-4xl text-gray-400"></i>
-        </div>
-        <p class="text-sm text-gray-600">Workout Assignment</p>
-      </div>
-      <div class="text-center">
-        <div class="bg-gray-200 rounded-lg p-8 mb-2">
-          <i class="fas fa-mobile-alt text-4xl text-gray-400"></i>
-        </div>
-        <p class="text-sm text-gray-600">Member Management</p>
-      </div>
-    </div>
-    <div class="mt-6 text-center">
-      <p class="text-sm text-gray-500">Screenshots coming soon - App currently in development</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      ${screenshotsHTML}
     </div>
   `;
   
@@ -342,12 +400,70 @@ function showScreenshots() {
       closeScreenshots();
     }
   });
+
+  // Close modal with Escape key
+  const escapeHandler = (e) => {
+    if (e.key === 'Escape') {
+      closeScreenshots();
+      document.removeEventListener('keydown', escapeHandler);
+    }
+  };
+  document.addEventListener('keydown', escapeHandler);
 }
 
 function closeScreenshots() {
   const modal = document.getElementById('screenshots-modal');
   if (modal) {
     modal.remove();
+  }
+}
+
+// Image Modal for full-size view
+function openImageModal(imageSrc) {
+  // Remove any existing image modal
+  const existingImageModal = document.getElementById('image-modal');
+  if (existingImageModal) {
+    existingImageModal.remove();
+  }
+
+  const imageModal = document.createElement('div');
+  imageModal.className = 'fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-[60] p-4';
+  imageModal.id = 'image-modal';
+  
+  imageModal.innerHTML = `
+    <div class="relative max-w-5xl max-h-[95vh] w-full">
+      <button onclick="closeImageModal()" class="absolute top-4 right-4 text-white hover:text-green-400 text-4xl z-10 transition-colors">&times;</button>
+      <img 
+        src="${imageSrc}" 
+        alt="Full size screenshot" 
+        class="w-full h-auto rounded-lg shadow-2xl"
+      />
+    </div>
+  `;
+  
+  document.body.appendChild(imageModal);
+  
+  // Close when clicking outside
+  imageModal.addEventListener('click', (e) => {
+    if (e.target === imageModal) {
+      closeImageModal();
+    }
+  });
+
+  // Close with Escape key
+  const escapeHandler = (e) => {
+    if (e.key === 'Escape') {
+      closeImageModal();
+      document.removeEventListener('keydown', escapeHandler);
+    }
+  };
+  document.addEventListener('keydown', escapeHandler);
+}
+
+function closeImageModal() {
+  const imageModal = document.getElementById('image-modal');
+  if (imageModal) {
+    imageModal.remove();
   }
 }
 
