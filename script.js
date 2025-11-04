@@ -291,9 +291,9 @@ function showScreenshots(appName) {
       description: 'Mobile gym management application built with Flutter',
       features: 'Features: Workout assignment, member management, training programs',
       screenshots: [
-        'UST-GYM photos/Screenshot 2025-11-04 183159.png',
-        'UST-GYM photos/Screenshot 2025-11-04 183219.png',
-        'UST-GYM photos/Screenshot 2025-11-04 183236.png',
+        'UST-GYM photos/1.png',
+        'UST-GYM photos/2.png',
+        'UST-GYM photos/3.png',
         'UST-GYM photos/Screenshot 2025-11-04 183255.png',
         'UST-GYM photos/Screenshot 2025-11-04 183317.png',
         'UST-GYM photos/Screenshot 2025-11-04 183336.png',
@@ -308,13 +308,13 @@ function showScreenshots(appName) {
       description: 'Mobile application for delivery drivers built with Flutter',
       features: 'Features: Order management, delivery tracking, navigation',
       screenshots: [
-        'Kazhi-driver/Screenshot 2025-11-04 173809.png',
-        'Kazhi-driver/Screenshot 2025-11-04 173901.png',
-        'Kazhi-driver/Screenshot 2025-11-04 173930.png',
-        'Kazhi-driver/Screenshot 2025-11-04 173946.png',
-        'Kazhi-driver/Screenshot 2025-11-04 174111.png',
-        'Kazhi-driver/Screenshot 2025-11-04 174133.png',
-        'Kazhi-driver/Screenshot 2025-11-04 174633.png'
+        'Kazhi-driver/1.png',
+        'Kazhi-driver/2.png',
+        'Kazhi-driver/3.png',
+        'Kazhi-driver/4.png',
+        'Kazhi-driver/5.png',
+        'Kazhi-driver/6.png',
+        'Kazhi-driver/7.png'
       ]
     },
     'kazhi-shop': {
@@ -322,15 +322,15 @@ function showScreenshots(appName) {
       description: 'Mobile application for shops to order deliveries built with Flutter',
       features: 'Features: Order placement, delivery tracking, call center integration',
       screenshots: [
-        'Kazhi-shop/Screenshot 2025-11-04 163433.png',
-        'Kazhi-shop/Screenshot 2025-11-04 163457.png',
-        'Kazhi-shop/Screenshot 2025-11-04 163550.png',
-        'Kazhi-shop/Screenshot 2025-11-04 163614.png',
-        'Kazhi-shop/Screenshot 2025-11-04 163639.png',
-        'Kazhi-shop/Screenshot 2025-11-04 163833.png',
-        'Kazhi-shop/Screenshot 2025-11-04 163904.png',
-        'Kazhi-shop/Screenshot 2025-11-04 163922.png',
-        'Kazhi-shop/Screenshot 2025-11-04 164021.png'
+        'Kazhi-shop/1.png',
+        'Kazhi-shop/2.png',
+        'Kazhi-shop/3.png',
+        'Kazhi-shop/4.png',
+        'Kazhi-shop/5.png',
+        'Kazhi-shop/6.png',
+        'Kazhi-shop/7.png',
+        'Kazhi-shop/8.png',
+        'Kazhi-shop/9.png'
       ]
     }
   };
@@ -347,6 +347,14 @@ function showScreenshots(appName) {
     existingModal.remove();
   }
 
+  // Current image index
+  let currentIndex = 0;
+
+  // Encode all screenshot paths
+  const encodedScreenshots = config.screenshots.map(screenshot => 
+    screenshot.split('/').map(part => encodeURIComponent(part)).join('/')
+  );
+
   // Create modal overlay
   const modal = document.createElement('div');
   modal.className = 'fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4';
@@ -355,39 +363,120 @@ function showScreenshots(appName) {
   
   // Create modal content
   const modalContent = document.createElement('div');
-  modalContent.className = 'bg-gray-900 rounded-lg p-4 md:p-6 max-w-6xl max-h-[90vh] overflow-y-auto mx-auto border border-green-400/30';
+  modalContent.className = 'bg-gray-900 rounded-lg p-4 md:p-6 max-w-5xl w-full mx-auto border border-green-400/30';
   
-  // Build screenshots grid
-  const screenshotsHTML = config.screenshots.map((screenshot, index) => {
-    // URL encode the screenshot path to handle spaces in folder/file names
-    const encodedScreenshot = screenshot.split('/').map(part => encodeURIComponent(part)).join('/');
-    return `
-    <div class="fade-in-up" style="animation-delay: ${index * 0.1}s">
+  // Function to update the main image
+  function updateMainImage(index) {
+    currentIndex = index;
+    const mainImg = modalContent.querySelector('#main-screenshot');
+    const imgCounter = modalContent.querySelector('#img-counter');
+    const thumbnails = modalContent.querySelectorAll('.thumbnail-item');
+    
+    if (mainImg) {
+      mainImg.src = encodedScreenshots[index];
+      mainImg.alt = `Screenshot ${index + 1}`;
+    }
+    
+    if (imgCounter) {
+      imgCounter.textContent = `${index + 1} / ${encodedScreenshots.length}`;
+    }
+    
+    // Update active thumbnail
+    thumbnails.forEach((thumb, i) => {
+      if (i === index) {
+        thumb.classList.add('border-green-400', 'opacity-100');
+        thumb.classList.remove('border-gray-600', 'opacity-60');
+      } else {
+        thumb.classList.remove('border-green-400', 'opacity-100');
+        thumb.classList.add('border-gray-600', 'opacity-60');
+      }
+    });
+    
+    // Update navigation buttons (allow wrapping, so don't disable)
+    const prevBtn = modalContent.querySelector('#prev-btn');
+    const nextBtn = modalContent.querySelector('#next-btn');
+    
+    // Scroll active thumbnail into view
+    if (thumbnails[index]) {
+      thumbnails[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
+  }
+
+  // Define navigation functions before creating HTML
+  window.updateScreenshotIndex = function(index) {
+    updateMainImage(index);
+  };
+  
+  window.navigateScreenshot = function(direction) {
+    let newIndex = currentIndex + direction;
+    // Wrap around
+    if (newIndex < 0) newIndex = encodedScreenshots.length - 1;
+    if (newIndex >= encodedScreenshots.length) newIndex = 0;
+    updateMainImage(newIndex);
+  };
+
+  // Build thumbnails HTML
+  const thumbnailsHTML = encodedScreenshots.map((screenshot, index) => `
+    <div class="thumbnail-item cursor-pointer border-2 rounded transition-all flex-shrink-0 w-20 h-20 md:w-24 md:h-24 overflow-hidden ${
+      index === 0 ? 'border-green-400 opacity-100' : 'border-gray-600 opacity-60 hover:opacity-80'
+    }" onclick="updateScreenshotIndex(${index})">
       <img 
-        src="${encodedScreenshot}" 
-        alt="Screenshot ${index + 1}" 
-        class="w-full h-auto rounded-lg border border-gray-700 hover:border-green-400/50 transition-colors cursor-pointer shadow-lg"
-        onclick="openImageModal('${encodedScreenshot}')"
+        src="${screenshot}" 
+        alt="Thumbnail ${index + 1}" 
+        class="w-full h-full object-cover rounded"
         loading="lazy"
       />
     </div>
-  `;
-  }).join('');
+  `).join('');
 
   modalContent.innerHTML = `
     <div class="flex justify-between items-center mb-4 pb-4 border-b border-gray-700">
       <div>
-        <h3 class="text-xl md:text-2xl font-bold text-green-400 font-mono">${config.title}</h3>
-        <p class="text-sm text-gray-400 mt-1">${config.description}</p>
+        <h3 class="text-lg md:text-xl font-bold text-green-400 font-mono">${config.title}</h3>
+        <p class="text-xs md:text-sm text-gray-400 mt-1">${config.description}</p>
       </div>
-      <button onclick="closeScreenshots()" class="text-gray-400 hover:text-white text-3xl leading-none transition-colors">&times;</button>
+      <button onclick="closeScreenshots()" class="text-gray-400 hover:text-white text-2xl leading-none transition-colors">&times;</button>
     </div>
-    <div class="text-center text-gray-400 mb-6 text-sm">
-      <p>${config.features}</p>
-      <p class="mt-2 text-xs text-gray-500">Click on any screenshot to view full size</p>
+    
+    <!-- Main Image Display -->
+    <div class="relative mb-4">
+      <div class="relative bg-gray-800 rounded-lg p-2 border border-gray-700">
+        <img 
+          id="main-screenshot"
+          src="${encodedScreenshots[0]}" 
+          alt="Screenshot 1" 
+          class="w-full h-auto rounded-lg max-h-[60vh] object-contain mx-auto"
+        />
+        
+        <!-- Navigation Buttons -->
+        <button 
+          id="prev-btn"
+          onclick="navigateScreenshot(-1)"
+          class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full bg-gray-900/90 border border-green-400/50 hover:border-green-400 hover:bg-gray-800 transition-all flex items-center justify-center text-green-400 z-10"
+        >
+          <i class="fas fa-chevron-left text-sm md:text-base"></i>
+        </button>
+        
+        <button 
+          id="next-btn"
+          onclick="navigateScreenshot(1)"
+          class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full bg-gray-900/90 border border-green-400/50 hover:border-green-400 hover:bg-gray-800 transition-all flex items-center justify-center text-green-400 z-10"
+        >
+          <i class="fas fa-chevron-right text-sm md:text-base"></i>
+        </button>
+        
+        <!-- Image Counter -->
+        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-gray-900/90 border border-green-400/50 rounded px-3 py-1">
+          <span id="img-counter" class="text-green-400 text-xs md:text-sm font-mono">1 / ${encodedScreenshots.length}</span>
+        </div>
+      </div>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      ${screenshotsHTML}
+    
+    <!-- Thumbnails Strip -->
+    <div class="border-t border-gray-700 pt-4">
+      <div class="thumbnail-scroll flex gap-2 overflow-x-auto pb-2" style="scrollbar-width: thin; scrollbar-color: rgba(0, 255, 127, 0.5) rgba(31, 41, 55, 1);">
+        ${thumbnailsHTML}
+      </div>
     </div>
   `;
   
@@ -401,19 +490,35 @@ function showScreenshots(appName) {
     }
   });
 
-  // Close modal with Escape key
-  const escapeHandler = (e) => {
+  // Keyboard navigation
+  const keyHandler = (e) => {
     if (e.key === 'Escape') {
       closeScreenshots();
-      document.removeEventListener('keydown', escapeHandler);
+      document.removeEventListener('keydown', keyHandler);
+    } else if (e.key === 'ArrowLeft') {
+      navigateScreenshot(-1);
+    } else if (e.key === 'ArrowRight') {
+      navigateScreenshot(1);
     }
   };
-  document.addEventListener('keydown', escapeHandler);
+  
+  document.addEventListener('keydown', keyHandler);
+  
+  // Store cleanup function
+  modal._cleanup = () => {
+    document.removeEventListener('keydown', keyHandler);
+    delete window.updateScreenshotIndex;
+    delete window.navigateScreenshot;
+  };
 }
 
 function closeScreenshots() {
   const modal = document.getElementById('screenshots-modal');
   if (modal) {
+    // Cleanup event listeners
+    if (modal._cleanup) {
+      modal._cleanup();
+    }
     modal.remove();
   }
 }
