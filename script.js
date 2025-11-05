@@ -288,7 +288,7 @@ function showScreenshots(appName) {
   const appConfigs = {
     'ust-gym': {
       title: 'UST GYM App Screenshots',
-      description: 'Mobile gym management application built with Flutter',
+      description: 'Mobile gym management application developed with Flutter',
       features: 'Features: Workout assignment, member management, training programs',
       screenshots: [
         'UST-GYM photos/1.png',
@@ -305,7 +305,7 @@ function showScreenshots(appName) {
     },
     'kazhi-driver': {
       title: 'Kazhi Delivery Driver App Screenshots',
-      description: 'Mobile application for delivery drivers built with Flutter',
+      description: 'Mobile application for delivery drivers developed with Flutter',
       features: 'Features: Order management, delivery tracking, navigation',
       screenshots: [
         'Kazhi-driver/1.png',
@@ -319,7 +319,7 @@ function showScreenshots(appName) {
     },
     'kazhi-shop': {
       title: 'Kazhi Shop App Screenshots',
-      description: 'Mobile application for shops to order deliveries built with Flutter',
+      description: 'Mobile application for shops to order deliveries developed with Flutter',
       features: 'Features: Order placement, delivery tracking, call center integration',
       screenshots: [
         'Kazhi-shop/1.png',
@@ -357,13 +357,13 @@ function showScreenshots(appName) {
 
   // Create modal overlay
   const modal = document.createElement('div');
-  modal.className = 'fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4';
+  modal.className = 'fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-2 md:p-4';
   modal.id = 'screenshots-modal';
   modal.style.backdropFilter = 'blur(4px)';
   
   // Create modal content
   const modalContent = document.createElement('div');
-  modalContent.className = 'bg-gray-900 rounded-lg p-4 md:p-6 max-w-5xl w-full mx-auto border border-green-400/30';
+  modalContent.className = 'bg-gray-900 rounded-lg p-3 md:p-4 max-w-4xl w-full mx-auto border border-green-400/30 max-h-[95vh] flex flex-col';
   
   // Function to update the main image
   function updateMainImage(index) {
@@ -417,7 +417,7 @@ function showScreenshots(appName) {
 
   // Build thumbnails HTML
   const thumbnailsHTML = encodedScreenshots.map((screenshot, index) => `
-    <div class="thumbnail-item cursor-pointer border-2 rounded transition-all flex-shrink-0 w-20 h-20 md:w-24 md:h-24 overflow-hidden ${
+    <div class="thumbnail-item cursor-pointer border-2 rounded transition-all flex-shrink-0 w-16 h-16 md:w-20 md:h-20 overflow-hidden ${
       index === 0 ? 'border-green-400 opacity-100' : 'border-gray-600 opacity-60 hover:opacity-80'
     }" onclick="updateScreenshotIndex(${index})">
       <img 
@@ -430,51 +430,52 @@ function showScreenshots(appName) {
   `).join('');
 
   modalContent.innerHTML = `
-    <div class="flex justify-between items-center mb-4 pb-4 border-b border-gray-700">
+    <div class="flex justify-between items-center mb-2 pb-2 border-b border-gray-700 flex-shrink-0">
       <div>
-        <h3 class="text-lg md:text-xl font-bold text-green-400 font-mono">${config.title}</h3>
-        <p class="text-xs md:text-sm text-gray-400 mt-1">${config.description}</p>
+        <h3 class="text-base md:text-lg font-bold text-green-400 font-mono">${config.title}</h3>
+        <p class="text-xs text-gray-400 mt-0.5">${config.description}</p>
       </div>
-      <button onclick="closeScreenshots()" class="text-gray-400 hover:text-white text-2xl leading-none transition-colors">&times;</button>
+      <button onclick="closeScreenshots()" class="text-gray-400 hover:text-white text-xl leading-none transition-colors">&times;</button>
     </div>
     
     <!-- Main Image Display -->
-    <div class="relative mb-4">
-      <div class="relative bg-gray-800 rounded-lg p-2 border border-gray-700">
+    <div class="relative mb-2 flex-1 flex items-center justify-center min-h-0">
+      <div class="relative bg-gray-800 rounded-lg p-1 border border-gray-700 w-full h-full flex items-center justify-center">
         <img 
           id="main-screenshot"
           src="${encodedScreenshots[0]}" 
           alt="Screenshot 1" 
-          class="w-full h-auto rounded-lg max-h-[60vh] object-contain mx-auto"
+          class="max-w-full max-h-full w-auto h-auto rounded-lg object-contain"
+          style="max-height: calc(95vh - 200px);"
         />
         
         <!-- Navigation Buttons -->
         <button 
           id="prev-btn"
           onclick="navigateScreenshot(-1)"
-          class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full bg-gray-900/90 border border-green-400/50 hover:border-green-400 hover:bg-gray-800 transition-all flex items-center justify-center text-green-400 z-10"
+          class="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 rounded-full bg-gray-900/90 border border-green-400/50 hover:border-green-400 hover:bg-gray-800 transition-all flex items-center justify-center text-green-400 z-10"
         >
-          <i class="fas fa-chevron-left text-sm md:text-base"></i>
+          <i class="fas fa-chevron-left text-xs md:text-sm"></i>
         </button>
         
         <button 
           id="next-btn"
           onclick="navigateScreenshot(1)"
-          class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full bg-gray-900/90 border border-green-400/50 hover:border-green-400 hover:bg-gray-800 transition-all flex items-center justify-center text-green-400 z-10"
+          class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 rounded-full bg-gray-900/90 border border-green-400/50 hover:border-green-400 hover:bg-gray-800 transition-all flex items-center justify-center text-green-400 z-10"
         >
-          <i class="fas fa-chevron-right text-sm md:text-base"></i>
+          <i class="fas fa-chevron-right text-xs md:text-sm"></i>
         </button>
         
         <!-- Image Counter -->
-        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-gray-900/90 border border-green-400/50 rounded px-3 py-1">
-          <span id="img-counter" class="text-green-400 text-xs md:text-sm font-mono">1 / ${encodedScreenshots.length}</span>
+        <div class="absolute bottom-2 left-1/2 -translate-x-1/2 bg-gray-900/90 border border-green-400/50 rounded px-2 py-0.5">
+          <span id="img-counter" class="text-green-400 text-xs font-mono">1 / ${encodedScreenshots.length}</span>
         </div>
       </div>
     </div>
     
     <!-- Thumbnails Strip -->
-    <div class="border-t border-gray-700 pt-4">
-      <div class="thumbnail-scroll flex gap-2 overflow-x-auto pb-2" style="scrollbar-width: thin; scrollbar-color: rgba(0, 255, 127, 0.5) rgba(31, 41, 55, 1);">
+    <div class="border-t border-gray-700 pt-2 flex-shrink-0">
+      <div class="thumbnail-scroll flex gap-1.5 overflow-x-auto pb-1" style="scrollbar-width: thin; scrollbar-color: rgba(0, 255, 127, 0.5) rgba(31, 41, 55, 1);">
         ${thumbnailsHTML}
       </div>
     </div>
